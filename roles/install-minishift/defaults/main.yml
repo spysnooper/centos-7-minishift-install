@@ -1,0 +1,7 @@
+---
+# defaults file for install-minishift
+minishift_installer_package: "https://github.com/minishift/minishift/releases/download/v1.11.0/1.11.0-linux-amd64.tgz"
+driver_kvm_binary: 'https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm'
+
+
+
