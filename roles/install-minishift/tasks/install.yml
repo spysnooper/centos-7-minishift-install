@@ -1,13 +1,29 @@
 ---
 # tasks file for install-minishift
 
-- name: "Download and unarchive minishift"
+- name: "copy minishift tarball"
+  copy: >
+    src="{{ minishift_installer_package }}"
+    dest="/tmp"
+    owner="root"
+    group="root"
+    mode="755"
+
+- name: download some_service_def init.d script
+  get_url: >
+    url="{{ minishift_installer_package_url }}"
+    dest="/tmp"
+    owner="root"
+    group="root"
+    mode="755"
+    
+- name: "ensure minishift tarball is unarchived"
   unarchive: >
-    src="{{ item }}"
+    src="/tmp/{{ item }}"
     dest="/tmp"
     remote_src="yes"
   with_items:
-    - "{{ minishift_installer_package_url }}"
+    - "{{ minishift_installer_package }}"
 
 - name: "ensure minishift binary is installed"
   copy: >
@@ -18,4 +34,3 @@
     mode="755"
   with_items: 
     - "{{ minishift_binary }}"
-

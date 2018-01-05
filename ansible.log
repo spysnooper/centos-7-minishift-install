@@ -3,3 +3,1775 @@
     pattern: [u'localhost']
     hosts (1):
       localhost
+2018-01-05 11:18:00,850 p=22991 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ******************************************************************
+2018-01-05 11:18:00,885 p=22991 u=adminlocal |  TASK [Gathering Facts] **************************************************************************************************
+2018-01-05 11:18:01,368 p=22991 u=adminlocal |  fatal: [localhost]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added 'localhost' (ECDSA) to the list of known hosts.\r\nPermission denied (publickey,gssapi-keyex,gssapi-with-mic,password).\r\n", "unreachable": true}
+2018-01-05 11:18:01,376 p=22991 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:18:01,376 p=22991 u=adminlocal |  PLAY RECAP **************************************************************************************************************
+2018-01-05 11:18:01,377 p=22991 u=adminlocal |  localhost                  : ok=0    changed=0    unreachable=1    failed=0   
+2018-01-05 11:18:35,665 p=23019 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ******************************************************************
+2018-01-05 11:18:35,684 p=23019 u=adminlocal |  TASK [Gathering Facts] **************************************************************************************************
+2018-01-05 11:18:36,076 p=23019 u=adminlocal |  fatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE", "rc": 1}
+2018-01-05 11:18:36,077 p=23019 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:18:36,077 p=23019 u=adminlocal |  PLAY RECAP **************************************************************************************************************
+2018-01-05 11:18:36,077 p=23019 u=adminlocal |  localhost                  : ok=0    changed=0    unreachable=0    failed=1   
+2018-01-05 11:19:11,813 p=23188 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ******************************************************************
+2018-01-05 11:19:11,833 p=23188 u=adminlocal |  TASK [Gathering Facts] **************************************************************************************************
+2018-01-05 11:19:12,209 p=23188 u=adminlocal |  fatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "sudo: a password is required\n", "module_stdout": "", "msg": "MODULE FAILURE", "rc": 1}
+2018-01-05 11:19:12,211 p=23188 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:19:12,212 p=23188 u=adminlocal |  PLAY RECAP **************************************************************************************************************
+2018-01-05 11:19:12,212 p=23188 u=adminlocal |  localhost                  : ok=0    changed=0    unreachable=0    failed=1   
+2018-01-05 11:20:33,517 p=23302 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ******************************************************************
+2018-01-05 11:20:33,536 p=23302 u=adminlocal |  TASK [Gathering Facts] **************************************************************************************************
+2018-01-05 11:20:34,966 p=23302 u=adminlocal |  ok: [localhost]
+2018-01-05 11:20:34,974 p=23302 u=adminlocal |  TASK [Ensure needed packages are installed] *****************************************************************************
+2018-01-05 11:20:41,434 p=23302 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python'])
+2018-01-05 11:20:41,447 p=23302 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] **************************************************
+2018-01-05 11:20:41,884 p=23302 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt'])
+2018-01-05 11:20:41,902 p=23302 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] ************************************************
+2018-01-05 11:20:42,363 p=23302 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm)
+2018-01-05 11:20:42,372 p=23302 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] **********************************
+2018-01-05 11:20:42,825 p=23302 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip'])
+2018-01-05 11:20:42,839 p=23302 u=adminlocal |  TASK [install-minishift : Download and unarchive minishift] *************************************************************
+2018-01-05 11:20:45,718 p=23302 u=adminlocal |  failed: [localhost] (item=https://github.com/minishift/minishift/releases/download/v1.11.0/1.11.0-linux-amd64.tgz) => {"changed": false, "item": "https://github.com/minishift/minishift/releases/download/v1.11.0/1.11.0-linux-amd64.tgz", "msg": "Failure downloading https://github.com/minishift/minishift/releases/download/v1.11.0/1.11.0-linux-amd64.tgz, HTTP Error 404: Not Found"}
+2018-01-05 11:20:45,721 p=23302 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:20:45,722 p=23302 u=adminlocal |  PLAY RECAP **************************************************************************************************************
+2018-01-05 11:20:45,722 p=23302 u=adminlocal |  localhost                  : ok=5    changed=0    unreachable=0    failed=1   
+2018-01-05 11:29:07,630 p=23948 u=adminlocal |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/defaults/main.yml': line 14, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+driver_kvm_binary_url: 'https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm'
+^ here
+This one looks easy to fix.  It seems that there is a value started
+with a quote, and the YAML parser is expecting to see the line ended
+with the same kind of quote.  For instance:
+
+    when: "ok" in result.stdout
+
+Could be written as:
+
+   when: '"ok" in result.stdout'
+
+Or equivalently:
+
+   when: "'ok' in result.stdout"
+
+exception type: <class 'yaml.scanner.ScannerError'>
+exception: while scanning a simple key
+  in "<unicode string>", line 11, column 1
+could not find expected ':'
+  in "<unicode string>", line 14, column 1
+2018-01-05 11:30:28,435 p=23994 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ******************************************************************
+2018-01-05 11:30:28,456 p=23994 u=adminlocal |  TASK [Gathering Facts] **************************************************************************************************
+2018-01-05 11:30:29,789 p=23994 u=adminlocal |  ok: [localhost]
+2018-01-05 11:30:29,797 p=23994 u=adminlocal |  TASK [Ensure needed packages are installed] *****************************************************************************
+2018-01-05 11:30:34,839 p=23994 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python'])
+2018-01-05 11:30:34,850 p=23994 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] **************************************************
+2018-01-05 11:30:35,301 p=23994 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt'])
+2018-01-05 11:30:35,313 p=23994 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] ************************************************
+2018-01-05 11:30:35,748 p=23994 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm)
+2018-01-05 11:30:35,757 p=23994 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] **********************************
+2018-01-05 11:30:36,195 p=23994 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip'])
+2018-01-05 11:30:36,205 p=23994 u=adminlocal |  TASK [install-minishift : copy minishift tarball] ***********************************************************************
+2018-01-05 11:30:36,553 p=23994 u=adminlocal |  changed: [localhost] => (item=tmp/minishift-1.11.0-linux-amd64.tgz)
+2018-01-05 11:30:36,563 p=23994 u=adminlocal |  TASK [install-minishift : Download and unarchive minishift] *************************************************************
+2018-01-05 11:30:36,626 p=23994 u=adminlocal |  failed: [localhost] (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {"changed": false, "item": "tmp/minishift-1.11.0-linux-amd64.tgz", "msg": "Could not find or access '/tmp/minishift-1.11.0-linux-amd64.tgz'"}
+2018-01-05 11:30:36,628 p=23994 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:30:36,628 p=23994 u=adminlocal |  PLAY RECAP **************************************************************************************************************
+2018-01-05 11:30:36,629 p=23994 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:32:23,147 p=24356 u=adminlocal |  ansible-playbook 2.4.2.0
+  config file = /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg
+  configured module search path = [u'/home/adminlocal/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Aug  4 2017, 00:39:18) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+2018-01-05 11:32:23,148 p=24356 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:32:23,154 p=24356 u=adminlocal |  Parsed /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/inventory inventory source with ini plugin
+2018-01-05 11:32:23,244 p=24356 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml
+2018-01-05 11:32:23,275 p=24356 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml
+2018-01-05 11:32:23,385 p=24356 u=adminlocal |  PLAYBOOK: minishift.yml *************************************************************************************************
+2018-01-05 11:32:23,385 p=24356 u=adminlocal |  1 plays in minishift.yml
+2018-01-05 11:32:23,421 p=24356 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ******************************************************************
+2018-01-05 11:32:23,440 p=24356 u=adminlocal |  TASK [Gathering Facts] **************************************************************************************************
+2018-01-05 11:32:23,784 p=24356 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-05 11:32:24,303 p=24356 u=adminlocal |  ok: [localhost]
+2018-01-05 11:32:24,311 p=24356 u=adminlocal |  TASK [Ensure needed packages are installed] *****************************************************************************
+2018-01-05 11:32:24,311 p=24356 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.yml:5
+2018-01-05 11:32:24,547 p=24356 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:32:31,174 p=24356 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {
+    "changed": false, 
+    "changes": {
+        "installed": [], 
+        "updated": []
+    }, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "libselinux-python"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "libselinux-python"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing libselinux-python are up to date"
+    ]
+}
+2018-01-05 11:32:31,176 p=24356 u=adminlocal |  META: ran handlers
+2018-01-05 11:32:31,188 p=24356 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] **************************************************
+2018-01-05 11:32:31,188 p=24356 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:3
+2018-01-05 11:32:31,231 p=24356 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:32:31,628 p=24356 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "qemu-kvm", 
+                "libvirt"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "qemu-kvm", 
+        "libvirt"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", 
+        "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"
+    ]
+}
+2018-01-05 11:32:31,638 p=24356 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] ************************************************
+2018-01-05 11:32:31,638 p=24356 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:10
+2018-01-05 11:32:31,844 p=24356 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-05 11:32:32,072 p=24356 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {
+    "changed": false, 
+    "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": "root", 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": "0755", 
+            "owner": "root", 
+            "path": "/usr/local/bin/docker-machine-driver-kvm", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+    "mode": "0755", 
+    "msg": "file already exists", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:bin_t:s0", 
+    "size": 12096944, 
+    "state": "file", 
+    "uid": 0, 
+    "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"
+}
+2018-01-05 11:32:32,081 p=24356 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] **********************************
+2018-01-05 11:32:32,082 p=24356 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:21
+2018-01-05 11:32:32,120 p=24356 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:32:32,529 p=24356 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "tar", 
+                "unzip"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "tar", 
+        "unzip"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "2:tar-1.26-32.el7.x86_64 providing tar is already installed", 
+        "unzip-6.0-16.el7.x86_64 providing unzip is already installed"
+    ]
+}
+2018-01-05 11:32:32,539 p=24356 u=adminlocal |  TASK [install-minishift : copy minishift tarball] ***********************************************************************
+2018-01-05 11:32:32,539 p=24356 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:4
+2018-01-05 11:32:32,740 p=24356 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:32:32,899 p=24356 u=adminlocal |  changed: [localhost] => (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": true, 
+    "diff": [], 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz"
+}
+2018-01-05 11:32:32,909 p=24356 u=adminlocal |  TASK [install-minishift : Download and unarchive minishift] *************************************************************
+2018-01-05 11:32:32,909 p=24356 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:11
+2018-01-05 11:32:32,967 p=24356 u=adminlocal |  failed: [localhost] (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": false, 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz", 
+    "msg": "Could not find or access '/tmp/minishift-1.11.0-linux-amd64.tgz'"
+}
+2018-01-05 11:32:32,969 p=24356 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:32:32,970 p=24356 u=adminlocal |  PLAY RECAP **************************************************************************************************************
+2018-01-05 11:32:32,970 p=24356 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:33:06,141 p=24619 u=adminlocal |  ansible-playbook 2.4.2.0
+  config file = /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg
+  configured module search path = [u'/home/adminlocal/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Aug  4 2017, 00:39:18) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+2018-01-05 11:33:06,141 p=24619 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:33:06,142 p=24619 u=adminlocal |  setting up inventory plugins
+2018-01-05 11:33:06,147 p=24619 u=adminlocal |  Set default localhost to localhost
+2018-01-05 11:33:06,147 p=24619 u=adminlocal |  Parsed /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/inventory inventory source with ini plugin
+2018-01-05 11:33:06,239 p=24619 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml
+2018-01-05 11:33:06,271 p=24619 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml
+2018-01-05 11:33:06,280 p=24619 u=adminlocal |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-01-05 11:33:06,383 p=24619 u=adminlocal |  PLAYBOOK: minishift.yml *******************************************************************************************************************************************************************
+2018-01-05 11:33:06,383 p=24619 u=adminlocal |  1 plays in minishift.yml
+2018-01-05 11:33:06,421 p=24619 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ************************************************************************************************************************************
+2018-01-05 11:33:06,439 p=24619 u=adminlocal |  TASK [Gathering Facts] ********************************************************************************************************************************************************************
+2018-01-05 11:33:06,782 p=24619 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-05 11:33:07,290 p=24619 u=adminlocal |  ok: [localhost]
+2018-01-05 11:33:07,299 p=24619 u=adminlocal |  TASK [Ensure needed packages are installed] ***********************************************************************************************************************************************
+2018-01-05 11:33:07,299 p=24619 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.yml:5
+2018-01-05 11:33:07,528 p=24619 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:33:15,461 p=24619 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {
+    "changed": false, 
+    "changes": {
+        "installed": [], 
+        "updated": []
+    }, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "libselinux-python"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "libselinux-python"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing libselinux-python are up to date"
+    ]
+}
+2018-01-05 11:33:15,463 p=24619 u=adminlocal |  META: ran handlers
+2018-01-05 11:33:15,476 p=24619 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] ********************************************************************************************************************
+2018-01-05 11:33:15,476 p=24619 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:3
+2018-01-05 11:33:15,525 p=24619 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:33:15,943 p=24619 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "qemu-kvm", 
+                "libvirt"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "qemu-kvm", 
+        "libvirt"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", 
+        "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"
+    ]
+}
+2018-01-05 11:33:15,953 p=24619 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] ******************************************************************************************************************
+2018-01-05 11:33:15,953 p=24619 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:10
+2018-01-05 11:33:16,156 p=24619 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-05 11:33:16,382 p=24619 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {
+    "changed": false, 
+    "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": "root", 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": "0755", 
+            "owner": "root", 
+            "path": "/usr/local/bin/docker-machine-driver-kvm", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+    "mode": "0755", 
+    "msg": "file already exists", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:bin_t:s0", 
+    "size": 12096944, 
+    "state": "file", 
+    "uid": 0, 
+    "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"
+}
+2018-01-05 11:33:16,391 p=24619 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] ****************************************************************************************************
+2018-01-05 11:33:16,391 p=24619 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:21
+2018-01-05 11:33:16,431 p=24619 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:33:16,835 p=24619 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "tar", 
+                "unzip"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "tar", 
+        "unzip"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "2:tar-1.26-32.el7.x86_64 providing tar is already installed", 
+        "unzip-6.0-16.el7.x86_64 providing unzip is already installed"
+    ]
+}
+2018-01-05 11:33:16,847 p=24619 u=adminlocal |  TASK [install-minishift : copy minishift tarball] *****************************************************************************************************************************************
+2018-01-05 11:33:16,847 p=24619 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:4
+2018-01-05 11:33:17,046 p=24619 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:33:17,200 p=24619 u=adminlocal |  changed: [localhost] => (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": true, 
+    "diff": [], 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz"
+}
+2018-01-05 11:33:17,210 p=24619 u=adminlocal |  TASK [install-minishift : Download and unarchive minishift] *******************************************************************************************************************************
+2018-01-05 11:33:17,210 p=24619 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:11
+2018-01-05 11:33:17,267 p=24619 u=adminlocal |  failed: [localhost] (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": false, 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz", 
+    "msg": "Could not find or access '/tmp/minishift-1.11.0-linux-amd64.tgz'"
+}
+2018-01-05 11:33:17,269 p=24619 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:33:17,270 p=24619 u=adminlocal |  PLAY RECAP ********************************************************************************************************************************************************************************
+2018-01-05 11:33:17,270 p=24619 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:37:00,360 p=24986 u=adminlocal |  ansible-playbook 2.4.2.0
+  config file = /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg
+  configured module search path = [u'/home/adminlocal/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Aug  4 2017, 00:39:18) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+2018-01-05 11:37:00,360 p=24986 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:37:00,361 p=24986 u=adminlocal |  setting up inventory plugins
+2018-01-05 11:37:00,366 p=24986 u=adminlocal |  Set default localhost to localhost
+2018-01-05 11:37:00,366 p=24986 u=adminlocal |  Parsed /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/inventory inventory source with ini plugin
+2018-01-05 11:37:00,459 p=24986 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml
+2018-01-05 11:37:00,493 p=24986 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml
+2018-01-05 11:37:00,503 p=24986 u=adminlocal |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-01-05 11:37:00,611 p=24986 u=adminlocal |  PLAYBOOK: minishift.yml *******************************************************************************************************************************************************************
+2018-01-05 11:37:00,612 p=24986 u=adminlocal |  1 plays in minishift.yml
+2018-01-05 11:37:00,651 p=24986 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ************************************************************************************************************************************
+2018-01-05 11:37:00,668 p=24986 u=adminlocal |  TASK [Gathering Facts] ********************************************************************************************************************************************************************
+2018-01-05 11:37:01,015 p=24986 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-05 11:37:02,344 p=24986 u=adminlocal |  ok: [localhost]
+2018-01-05 11:37:02,353 p=24986 u=adminlocal |  TASK [Ensure needed packages are installed] ***********************************************************************************************************************************************
+2018-01-05 11:37:02,353 p=24986 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.yml:5
+2018-01-05 11:37:02,602 p=24986 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:37:07,252 p=24986 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {
+    "changed": false, 
+    "changes": {
+        "installed": [], 
+        "updated": []
+    }, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "libselinux-python"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "libselinux-python"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing libselinux-python are up to date"
+    ]
+}
+2018-01-05 11:37:07,253 p=24986 u=adminlocal |  META: ran handlers
+2018-01-05 11:37:07,266 p=24986 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] ********************************************************************************************************************
+2018-01-05 11:37:07,266 p=24986 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:3
+2018-01-05 11:37:07,311 p=24986 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:37:07,714 p=24986 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "qemu-kvm", 
+                "libvirt"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "qemu-kvm", 
+        "libvirt"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", 
+        "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"
+    ]
+}
+2018-01-05 11:37:07,724 p=24986 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] ******************************************************************************************************************
+2018-01-05 11:37:07,724 p=24986 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:10
+2018-01-05 11:37:07,939 p=24986 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-05 11:37:08,164 p=24986 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {
+    "changed": false, 
+    "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": "root", 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": "0755", 
+            "owner": "root", 
+            "path": "/usr/local/bin/docker-machine-driver-kvm", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+    "mode": "0755", 
+    "msg": "file already exists", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:bin_t:s0", 
+    "size": 12096944, 
+    "state": "file", 
+    "uid": 0, 
+    "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"
+}
+2018-01-05 11:37:08,173 p=24986 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] ****************************************************************************************************
+2018-01-05 11:37:08,173 p=24986 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:21
+2018-01-05 11:37:08,214 p=24986 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:37:08,623 p=24986 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "tar", 
+                "unzip"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "tar", 
+        "unzip"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "2:tar-1.26-32.el7.x86_64 providing tar is already installed", 
+        "unzip-6.0-16.el7.x86_64 providing unzip is already installed"
+    ]
+}
+2018-01-05 11:37:08,633 p=24986 u=adminlocal |  TASK [install-minishift : copy minishift tarball] *****************************************************************************************************************************************
+2018-01-05 11:37:08,633 p=24986 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:4
+2018-01-05 11:37:08,835 p=24986 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:37:09,000 p=24986 u=adminlocal |  changed: [localhost] => (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": true, 
+    "diff": [], 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz"
+}
+2018-01-05 11:37:09,011 p=24986 u=adminlocal |  TASK [install-minishift : Download and unarchive minishift] *******************************************************************************************************************************
+2018-01-05 11:37:09,011 p=24986 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:11
+2018-01-05 11:37:09,060 p=24986 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:37:09,413 p=24986 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/unarchive.py
+2018-01-05 11:37:09,656 p=24986 u=adminlocal |  The full traceback is:
+  File "/tmp/ansible_9qsbtK/ansible_module_unarchive.py", line 141, in <module>
+    from shlex import quote
+
+2018-01-05 11:37:09,657 p=24986 u=adminlocal |  failed: [localhost] (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "creates": null, 
+            "delimiter": null, 
+            "dest": "/tmp", 
+            "directory_mode": null, 
+            "exclude": [], 
+            "extra_opts": [], 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "keep_newer": false, 
+            "list_files": false, 
+            "mode": null, 
+            "original_basename": "minishift-1.11.0-linux-amd64.tgz", 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": true, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "tmp/minishift-1.11.0-linux-amd64.tgz", 
+            "unsafe_writes": null, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz", 
+    "msg": "Source 'tmp/minishift-1.11.0-linux-amd64.tgz' does not exist"
+}
+2018-01-05 11:37:09,659 p=24986 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:37:09,659 p=24986 u=adminlocal |  PLAY RECAP ********************************************************************************************************************************************************************************
+2018-01-05 11:37:09,659 p=24986 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:39:28,766 p=25405 u=adminlocal |  ansible-playbook 2.4.2.0
+  config file = /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg
+  configured module search path = [u'/home/adminlocal/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Aug  4 2017, 00:39:18) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+2018-01-05 11:39:28,767 p=25405 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:39:28,768 p=25405 u=adminlocal |  setting up inventory plugins
+2018-01-05 11:39:28,773 p=25405 u=adminlocal |  Set default localhost to localhost
+2018-01-05 11:39:28,773 p=25405 u=adminlocal |  Parsed /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/inventory inventory source with ini plugin
+2018-01-05 11:39:28,867 p=25405 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml
+2018-01-05 11:39:28,916 p=25405 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml
+2018-01-05 11:39:28,930 p=25405 u=adminlocal |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-01-05 11:39:29,043 p=25405 u=adminlocal |  PLAYBOOK: minishift.yml *******************************************************************************************************************************************************************
+2018-01-05 11:39:29,043 p=25405 u=adminlocal |  1 plays in minishift.yml
+2018-01-05 11:39:29,079 p=25405 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ************************************************************************************************************************************
+2018-01-05 11:39:29,098 p=25405 u=adminlocal |  TASK [Gathering Facts] ********************************************************************************************************************************************************************
+2018-01-05 11:39:29,440 p=25405 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-05 11:39:30,410 p=25405 u=adminlocal |  ok: [localhost]
+2018-01-05 11:39:30,419 p=25405 u=adminlocal |  TASK [Ensure needed packages are installed] ***********************************************************************************************************************************************
+2018-01-05 11:39:30,419 p=25405 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.yml:5
+2018-01-05 11:39:30,662 p=25405 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:39:36,563 p=25405 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {
+    "changed": false, 
+    "changes": {
+        "installed": [], 
+        "updated": []
+    }, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "libselinux-python"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "libselinux-python"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing libselinux-python are up to date"
+    ]
+}
+2018-01-05 11:39:36,565 p=25405 u=adminlocal |  META: ran handlers
+2018-01-05 11:39:36,577 p=25405 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] ********************************************************************************************************************
+2018-01-05 11:39:36,578 p=25405 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:3
+2018-01-05 11:39:36,623 p=25405 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:39:37,025 p=25405 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "qemu-kvm", 
+                "libvirt"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "qemu-kvm", 
+        "libvirt"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", 
+        "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"
+    ]
+}
+2018-01-05 11:39:37,034 p=25405 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] ******************************************************************************************************************
+2018-01-05 11:39:37,034 p=25405 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:10
+2018-01-05 11:39:37,243 p=25405 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-05 11:39:37,465 p=25405 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {
+    "changed": false, 
+    "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": "root", 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": "0755", 
+            "owner": "root", 
+            "path": "/usr/local/bin/docker-machine-driver-kvm", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+    "mode": "0755", 
+    "msg": "file already exists", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:bin_t:s0", 
+    "size": 12096944, 
+    "state": "file", 
+    "uid": 0, 
+    "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"
+}
+2018-01-05 11:39:37,474 p=25405 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] ****************************************************************************************************
+2018-01-05 11:39:37,475 p=25405 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:21
+2018-01-05 11:39:37,520 p=25405 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:39:37,924 p=25405 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "tar", 
+                "unzip"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "tar", 
+        "unzip"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "2:tar-1.26-32.el7.x86_64 providing tar is already installed", 
+        "unzip-6.0-16.el7.x86_64 providing unzip is already installed"
+    ]
+}
+2018-01-05 11:39:37,934 p=25405 u=adminlocal |  TASK [install-minishift : copy minishift tarball] *****************************************************************************************************************************************
+2018-01-05 11:39:37,934 p=25405 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:4
+2018-01-05 11:39:38,132 p=25405 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:39:38,284 p=25405 u=adminlocal |  changed: [localhost] => (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": true, 
+    "diff": [], 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz"
+}
+2018-01-05 11:39:38,295 p=25405 u=adminlocal |  TASK [install-minishift : ensure minishift tarball is unarchived] *************************************************************************************************************************
+2018-01-05 11:39:38,295 p=25405 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:11
+2018-01-05 11:39:38,343 p=25405 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:39:38,706 p=25405 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/unarchive.py
+2018-01-05 11:39:38,970 p=25405 u=adminlocal |  The full traceback is:
+  File "/tmp/ansible_1PVFut/ansible_module_unarchive.py", line 141, in <module>
+    from shlex import quote
+
+2018-01-05 11:39:38,971 p=25405 u=adminlocal |  failed: [localhost] (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "creates": null, 
+            "delimiter": null, 
+            "dest": "/tmp", 
+            "directory_mode": null, 
+            "exclude": [], 
+            "extra_opts": [], 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "keep_newer": false, 
+            "list_files": false, 
+            "mode": null, 
+            "original_basename": "minishift-1.11.0-linux-amd64.tgz", 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": true, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/tmp/minishift-1.11.0-linux-amd64.tgz", 
+            "unsafe_writes": null, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz", 
+    "msg": "Source '/tmp/minishift-1.11.0-linux-amd64.tgz' does not exist"
+}
+2018-01-05 11:39:38,973 p=25405 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:39:38,973 p=25405 u=adminlocal |  PLAY RECAP ********************************************************************************************************************************************************************************
+2018-01-05 11:39:38,974 p=25405 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:43:10,999 p=25850 u=adminlocal |  ansible-playbook 2.4.2.0
+  config file = /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg
+  configured module search path = [u'/home/adminlocal/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Aug  4 2017, 00:39:18) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+2018-01-05 11:43:10,999 p=25850 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:43:11,000 p=25850 u=adminlocal |  setting up inventory plugins
+2018-01-05 11:43:11,005 p=25850 u=adminlocal |  Set default localhost to localhost
+2018-01-05 11:43:11,006 p=25850 u=adminlocal |  Parsed /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/inventory inventory source with ini plugin
+2018-01-05 11:43:11,099 p=25850 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml
+2018-01-05 11:43:11,134 p=25850 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml
+2018-01-05 11:43:11,143 p=25850 u=adminlocal |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-01-05 11:43:11,247 p=25850 u=adminlocal |  PLAYBOOK: minishift.yml *******************************************************************************************************************************************************************
+2018-01-05 11:43:11,247 p=25850 u=adminlocal |  1 plays in minishift.yml
+2018-01-05 11:43:11,285 p=25850 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ************************************************************************************************************************************
+2018-01-05 11:43:11,303 p=25850 u=adminlocal |  TASK [Gathering Facts] ********************************************************************************************************************************************************************
+2018-01-05 11:43:11,633 p=25850 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-05 11:43:12,567 p=25850 u=adminlocal |  ok: [localhost]
+2018-01-05 11:43:12,575 p=25850 u=adminlocal |  TASK [Ensure needed packages are installed] ***********************************************************************************************************************************************
+2018-01-05 11:43:12,576 p=25850 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.yml:5
+2018-01-05 11:43:12,819 p=25850 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:43:19,559 p=25850 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {
+    "changed": false, 
+    "changes": {
+        "installed": [], 
+        "updated": []
+    }, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "libselinux-python"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "libselinux-python"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing libselinux-python are up to date"
+    ]
+}
+2018-01-05 11:43:19,560 p=25850 u=adminlocal |  META: ran handlers
+2018-01-05 11:43:19,570 p=25850 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] ********************************************************************************************************************
+2018-01-05 11:43:19,571 p=25850 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:3
+2018-01-05 11:43:19,611 p=25850 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:43:20,001 p=25850 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "qemu-kvm", 
+                "libvirt"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "qemu-kvm", 
+        "libvirt"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", 
+        "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"
+    ]
+}
+2018-01-05 11:43:20,010 p=25850 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] ******************************************************************************************************************
+2018-01-05 11:43:20,011 p=25850 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:10
+2018-01-05 11:43:20,216 p=25850 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-05 11:43:20,446 p=25850 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {
+    "changed": false, 
+    "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": "root", 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": "0755", 
+            "owner": "root", 
+            "path": "/usr/local/bin/docker-machine-driver-kvm", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+    "mode": "0755", 
+    "msg": "file already exists", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:bin_t:s0", 
+    "size": 12096944, 
+    "state": "file", 
+    "uid": 0, 
+    "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"
+}
+2018-01-05 11:43:20,455 p=25850 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] ****************************************************************************************************
+2018-01-05 11:43:20,455 p=25850 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:21
+2018-01-05 11:43:20,497 p=25850 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:43:20,912 p=25850 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "tar", 
+                "unzip"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "tar", 
+        "unzip"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "2:tar-1.26-32.el7.x86_64 providing tar is already installed", 
+        "unzip-6.0-16.el7.x86_64 providing unzip is already installed"
+    ]
+}
+2018-01-05 11:43:20,925 p=25850 u=adminlocal |  TASK [install-minishift : copy minishift tarball] *****************************************************************************************************************************************
+2018-01-05 11:43:20,925 p=25850 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:4
+2018-01-05 11:43:21,115 p=25850 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:43:21,281 p=25850 u=adminlocal |  changed: [localhost] => {
+    "changed": true, 
+    "diff": []
+}
+2018-01-05 11:43:21,291 p=25850 u=adminlocal |  TASK [install-minishift : ensure minishift tarball is unarchived] *************************************************************************************************************************
+2018-01-05 11:43:21,291 p=25850 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:12
+2018-01-05 11:43:21,338 p=25850 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:43:21,712 p=25850 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/unarchive.py
+2018-01-05 11:43:21,952 p=25850 u=adminlocal |  The full traceback is:
+  File "/tmp/ansible_1UilA2/ansible_module_unarchive.py", line 141, in <module>
+    from shlex import quote
+
+2018-01-05 11:43:21,953 p=25850 u=adminlocal |  failed: [localhost] (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "creates": null, 
+            "delimiter": null, 
+            "dest": "/tmp", 
+            "directory_mode": null, 
+            "exclude": [], 
+            "extra_opts": [], 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "keep_newer": false, 
+            "list_files": false, 
+            "mode": null, 
+            "original_basename": "minishift-1.11.0-linux-amd64.tgz", 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": true, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/tmp/minishift-1.11.0-linux-amd64.tgz", 
+            "unsafe_writes": null, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz", 
+    "msg": "Source '/tmp/minishift-1.11.0-linux-amd64.tgz' does not exist"
+}
+2018-01-05 11:43:21,955 p=25850 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:43:21,956 p=25850 u=adminlocal |  PLAY RECAP ********************************************************************************************************************************************************************************
+2018-01-05 11:43:21,956 p=25850 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:44:49,222 p=26325 u=adminlocal |  ansible-playbook 2.4.2.0
+  config file = /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg
+  configured module search path = [u'/home/adminlocal/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Aug  4 2017, 00:39:18) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+2018-01-05 11:44:49,222 p=26325 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:44:49,223 p=26325 u=adminlocal |  setting up inventory plugins
+2018-01-05 11:44:49,228 p=26325 u=adminlocal |  Set default localhost to localhost
+2018-01-05 11:44:49,228 p=26325 u=adminlocal |  Parsed /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/inventory inventory source with ini plugin
+2018-01-05 11:44:49,318 p=26325 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml
+2018-01-05 11:44:49,351 p=26325 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml
+2018-01-05 11:44:49,360 p=26325 u=adminlocal |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-01-05 11:44:49,461 p=26325 u=adminlocal |  PLAYBOOK: minishift.yml **********************************************************************************************************************************************************************************************************************
+2018-01-05 11:44:49,462 p=26325 u=adminlocal |  1 plays in minishift.yml
+2018-01-05 11:44:49,498 p=26325 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ***************************************************************************************************************************************************************************************
+2018-01-05 11:44:49,516 p=26325 u=adminlocal |  TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2018-01-05 11:44:49,847 p=26325 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-05 11:44:50,412 p=26325 u=adminlocal |  ok: [localhost]
+2018-01-05 11:44:50,421 p=26325 u=adminlocal |  TASK [Ensure needed packages are installed] **************************************************************************************************************************************************************************************************
+2018-01-05 11:44:50,421 p=26325 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.yml:6
+2018-01-05 11:44:50,650 p=26325 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:44:56,181 p=26325 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {
+    "changed": false, 
+    "changes": {
+        "installed": [], 
+        "updated": []
+    }, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "libselinux-python"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "libselinux-python"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing libselinux-python are up to date"
+    ]
+}
+2018-01-05 11:44:56,182 p=26325 u=adminlocal |  META: ran handlers
+2018-01-05 11:44:56,193 p=26325 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] ***********************************************************************************************************************************************************************
+2018-01-05 11:44:56,193 p=26325 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:3
+2018-01-05 11:44:56,239 p=26325 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:44:56,631 p=26325 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "qemu-kvm", 
+                "libvirt"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "qemu-kvm", 
+        "libvirt"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", 
+        "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"
+    ]
+}
+2018-01-05 11:44:56,640 p=26325 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] *********************************************************************************************************************************************************************
+2018-01-05 11:44:56,640 p=26325 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:10
+2018-01-05 11:44:56,848 p=26325 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-05 11:44:57,072 p=26325 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {
+    "changed": false, 
+    "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": "root", 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": "0755", 
+            "owner": "root", 
+            "path": "/usr/local/bin/docker-machine-driver-kvm", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+    "mode": "0755", 
+    "msg": "file already exists", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:bin_t:s0", 
+    "size": 12096944, 
+    "state": "file", 
+    "uid": 0, 
+    "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"
+}
+2018-01-05 11:44:57,084 p=26325 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] *******************************************************************************************************************************************************
+2018-01-05 11:44:57,084 p=26325 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:21
+2018-01-05 11:44:57,124 p=26325 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:44:57,514 p=26325 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "tar", 
+                "unzip"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "tar", 
+        "unzip"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "2:tar-1.26-32.el7.x86_64 providing tar is already installed", 
+        "unzip-6.0-16.el7.x86_64 providing unzip is already installed"
+    ]
+}
+2018-01-05 11:44:57,523 p=26325 u=adminlocal |  TASK [install-minishift : copy minishift tarball] ********************************************************************************************************************************************************************************************
+2018-01-05 11:44:57,523 p=26325 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:4
+2018-01-05 11:44:57,720 p=26325 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:44:57,875 p=26325 u=adminlocal |  changed: [localhost] => {
+    "changed": true, 
+    "diff": []
+}
+2018-01-05 11:44:57,884 p=26325 u=adminlocal |  TASK [install-minishift : ensure minishift tarball is unarchived] ****************************************************************************************************************************************************************************
+2018-01-05 11:44:57,885 p=26325 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:12
+2018-01-05 11:44:57,934 p=26325 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:44:58,321 p=26325 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/unarchive.py
+2018-01-05 11:44:58,554 p=26325 u=adminlocal |  The full traceback is:
+  File "/tmp/ansible_lMWR8N/ansible_module_unarchive.py", line 141, in <module>
+    from shlex import quote
+
+2018-01-05 11:44:58,555 p=26325 u=adminlocal |  failed: [localhost] (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "creates": null, 
+            "delimiter": null, 
+            "dest": "/tmp", 
+            "directory_mode": null, 
+            "exclude": [], 
+            "extra_opts": [], 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "keep_newer": false, 
+            "list_files": false, 
+            "mode": null, 
+            "original_basename": "minishift-1.11.0-linux-amd64.tgz", 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": true, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/tmp/minishift-1.11.0-linux-amd64.tgz", 
+            "unsafe_writes": null, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz", 
+    "msg": "Source '/tmp/minishift-1.11.0-linux-amd64.tgz' does not exist"
+}
+2018-01-05 11:44:58,558 p=26325 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:44:58,558 p=26325 u=adminlocal |  PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2018-01-05 11:44:58,558 p=26325 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:48:40,733 p=26983 u=adminlocal |  ansible-playbook 2.4.2.0
+  config file = /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg
+  configured module search path = [u'/home/adminlocal/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.5 (default, Aug  4 2017, 00:39:18) [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+2018-01-05 11:48:40,733 p=26983 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:48:40,734 p=26983 u=adminlocal |  setting up inventory plugins
+2018-01-05 11:48:40,740 p=26983 u=adminlocal |  Set default localhost to localhost
+2018-01-05 11:48:40,740 p=26983 u=adminlocal |  Parsed /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/inventory inventory source with ini plugin
+2018-01-05 11:48:40,831 p=26983 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml
+2018-01-05 11:48:40,864 p=26983 u=adminlocal |  statically imported: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml
+2018-01-05 11:48:40,874 p=26983 u=adminlocal |  Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/site-packages/ansible/plugins/callback/__init__.pyc
+2018-01-05 11:48:40,977 p=26983 u=adminlocal |  PLAYBOOK: minishift.yml **********************************************************************************************************************************************************************************************************************
+2018-01-05 11:48:40,977 p=26983 u=adminlocal |  1 plays in minishift.yml
+2018-01-05 11:48:41,014 p=26983 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ***************************************************************************************************************************************************************************************
+2018-01-05 11:48:41,033 p=26983 u=adminlocal |  TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2018-01-05 11:48:41,370 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/setup.py
+2018-01-05 11:48:42,082 p=26983 u=adminlocal |  ok: [localhost]
+2018-01-05 11:48:42,091 p=26983 u=adminlocal |  TASK [Ensure needed packages are installed] **************************************************************************************************************************************************************************************************
+2018-01-05 11:48:42,091 p=26983 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.yml:6
+2018-01-05 11:48:42,323 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:48:47,527 p=26983 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {
+    "changed": false, 
+    "changes": {
+        "installed": [], 
+        "updated": []
+    }, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "libselinux-python"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "latest", 
+            "update_cache": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "libselinux-python"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "All packages providing libselinux-python are up to date"
+    ]
+}
+2018-01-05 11:48:47,529 p=26983 u=adminlocal |  META: ran handlers
+2018-01-05 11:48:47,541 p=26983 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] ***********************************************************************************************************************************************************************
+2018-01-05 11:48:47,542 p=26983 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:3
+2018-01-05 11:48:47,584 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:48:47,973 p=26983 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "qemu-kvm", 
+                "libvirt"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "qemu-kvm", 
+        "libvirt"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", 
+        "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"
+    ]
+}
+2018-01-05 11:48:47,982 p=26983 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] *********************************************************************************************************************************************************************
+2018-01-05 11:48:47,983 p=26983 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:10
+2018-01-05 11:48:48,187 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+2018-01-05 11:48:48,405 p=26983 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {
+    "changed": false, 
+    "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+    "gid": 0, 
+    "group": "root", 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "checksum": "", 
+            "client_cert": null, 
+            "client_key": null, 
+            "content": null, 
+            "delimiter": null, 
+            "dest": "/usr/local/bin/docker-machine-driver-kvm", 
+            "directory_mode": null, 
+            "follow": false, 
+            "force": false, 
+            "force_basic_auth": false, 
+            "group": "root", 
+            "headers": null, 
+            "http_agent": "ansible-httpget", 
+            "mode": "0755", 
+            "owner": "root", 
+            "path": "/usr/local/bin/docker-machine-driver-kvm", 
+            "regexp": null, 
+            "remote_src": null, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "sha256sum": "", 
+            "src": null, 
+            "timeout": 10, 
+            "tmp_dest": null, 
+            "unsafe_writes": null, 
+            "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+            "url_password": null, 
+            "url_username": null, 
+            "use_proxy": true, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", 
+    "mode": "0755", 
+    "msg": "file already exists", 
+    "owner": "root", 
+    "secontext": "unconfined_u:object_r:bin_t:s0", 
+    "size": 12096944, 
+    "state": "file", 
+    "uid": 0, 
+    "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"
+}
+2018-01-05 11:48:48,415 p=26983 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] *******************************************************************************************************************************************************
+2018-01-05 11:48:48,415 p=26983 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/pre-requisites.yml:21
+2018-01-05 11:48:48,455 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/packaging/os/yum.py
+2018-01-05 11:48:48,839 p=26983 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false, 
+            "conf_file": null, 
+            "disable_gpg_check": false, 
+            "disablerepo": null, 
+            "enablerepo": null, 
+            "exclude": null, 
+            "install_repoquery": true, 
+            "installroot": "/", 
+            "list": null, 
+            "name": [
+                "tar", 
+                "unzip"
+            ], 
+            "security": false, 
+            "skip_broken": false, 
+            "state": "present", 
+            "update_cache": false, 
+            "validate_certs": true
+        }
+    }, 
+    "item": [
+        "tar", 
+        "unzip"
+    ], 
+    "msg": "", 
+    "rc": 0, 
+    "results": [
+        "2:tar-1.26-32.el7.x86_64 providing tar is already installed", 
+        "unzip-6.0-16.el7.x86_64 providing unzip is already installed"
+    ]
+}
+2018-01-05 11:48:48,849 p=26983 u=adminlocal |  TASK [install-minishift : copy minishift tarball] ********************************************************************************************************************************************************************************************
+2018-01-05 11:48:48,849 p=26983 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:4
+2018-01-05 11:48:49,035 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:48:49,184 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:48:49,345 p=26983 u=adminlocal |  changed: [localhost] => {
+    "changed": true, 
+    "diff": []
+}
+2018-01-05 11:48:49,354 p=26983 u=adminlocal |  TASK [install-minishift : ensure minishift tarball is unarchived] ****************************************************************************************************************************************************************************
+2018-01-05 11:48:49,355 p=26983 u=adminlocal |  task path: /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/roles/install-minishift/tasks/install.yml:12
+2018-01-05 11:48:49,401 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/stat.py
+2018-01-05 11:48:49,753 p=26983 u=adminlocal |  Using module file /usr/lib/python2.7/site-packages/ansible/modules/files/unarchive.py
+2018-01-05 11:48:49,990 p=26983 u=adminlocal |  The full traceback is:
+  File "/tmp/ansible_TZb14c/ansible_module_unarchive.py", line 141, in <module>
+    from shlex import quote
+
+2018-01-05 11:48:49,991 p=26983 u=adminlocal |  failed: [localhost] (item=tmp/minishift-1.11.0-linux-amd64.tgz) => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "attributes": null, 
+            "backup": null, 
+            "content": null, 
+            "creates": null, 
+            "delimiter": null, 
+            "dest": "/tmp", 
+            "directory_mode": null, 
+            "exclude": [], 
+            "extra_opts": [], 
+            "follow": false, 
+            "force": null, 
+            "group": null, 
+            "keep_newer": false, 
+            "list_files": false, 
+            "mode": null, 
+            "original_basename": "minishift-1.11.0-linux-amd64.tgz", 
+            "owner": null, 
+            "regexp": null, 
+            "remote_src": true, 
+            "selevel": null, 
+            "serole": null, 
+            "setype": null, 
+            "seuser": null, 
+            "src": "/tmp/minishift-1.11.0-linux-amd64.tgz", 
+            "unsafe_writes": null, 
+            "validate_certs": true
+        }
+    }, 
+    "item": "tmp/minishift-1.11.0-linux-amd64.tgz", 
+    "msg": "Source '/tmp/minishift-1.11.0-linux-amd64.tgz' does not exist"
+}
+2018-01-05 11:48:49,993 p=26983 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:48:49,994 p=26983 u=adminlocal |  PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2018-01-05 11:48:49,994 p=26983 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:51:42,766 p=27602 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:51:43,034 p=27602 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ***************************************************************************************************************************************************************************************
+2018-01-05 11:51:43,053 p=27602 u=adminlocal |  TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2018-01-05 11:51:44,323 p=27602 u=adminlocal |  ok: [localhost]
+2018-01-05 11:51:44,331 p=27602 u=adminlocal |  TASK [Ensure needed packages are installed] **************************************************************************************************************************************************************************************************
+2018-01-05 11:51:50,048 p=27602 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {"changed": false, "changes": {"installed": [], "updated": []}, "item": ["libselinux-python"], "msg": "", "rc": 0, "results": ["All packages providing libselinux-python are up to date"]}
+2018-01-05 11:51:50,060 p=27602 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] ***********************************************************************************************************************************************************************
+2018-01-05 11:51:50,491 p=27602 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {"changed": false, "item": ["qemu-kvm", "libvirt"], "msg": "", "rc": 0, "results": ["10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"]}
+2018-01-05 11:51:50,504 p=27602 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] *********************************************************************************************************************************************************************
+2018-01-05 11:51:50,945 p=27602 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {"changed": false, "dest": "/usr/local/bin/docker-machine-driver-kvm", "gid": 0, "group": "root", "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", "mode": "0755", "msg": "file already exists", "owner": "root", "secontext": "unconfined_u:object_r:bin_t:s0", "size": 12096944, "state": "file", "uid": 0, "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"}
+2018-01-05 11:51:50,956 p=27602 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] *******************************************************************************************************************************************************
+2018-01-05 11:51:51,383 p=27602 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {"changed": false, "item": ["tar", "unzip"], "msg": "", "rc": 0, "results": ["2:tar-1.26-32.el7.x86_64 providing tar is already installed", "unzip-6.0-16.el7.x86_64 providing unzip is already installed"]}
+2018-01-05 11:51:51,393 p=27602 u=adminlocal |  TASK [install-minishift : copy minishift tarball] ********************************************************************************************************************************************************************************************
+2018-01-05 11:51:51,906 p=27602 u=adminlocal |  changed: [localhost] => {"changed": true}
+2018-01-05 11:51:51,915 p=27602 u=adminlocal |  TASK [install-minishift : ensure minishift tarball is unarchived] ****************************************************************************************************************************************************************************
+2018-01-05 11:51:52,576 p=27602 u=adminlocal |  failed: [localhost] (item=minishift-1.11.0-linux-amd64.tgz) => {"changed": false, "item": "minishift-1.11.0-linux-amd64.tgz", "msg": "Source '/tmp/minishift-1.11.0-linux-amd64.tgz' does not exist"}
+2018-01-05 11:51:52,578 p=27602 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:51:52,579 p=27602 u=adminlocal |  PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2018-01-05 11:51:52,579 p=27602 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
+2018-01-05 11:53:40,642 p=28140 u=adminlocal |  Using /usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/ansible.cfg as config file
+2018-01-05 11:53:40,911 p=28140 u=adminlocal |  PLAY [this playbook installs minishift in a EL/7 host] ***************************************************************************************************************************************************************************************
+2018-01-05 11:53:40,930 p=28140 u=adminlocal |  TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2018-01-05 11:53:42,812 p=28140 u=adminlocal |  ok: [localhost]
+2018-01-05 11:53:42,821 p=28140 u=adminlocal |  TASK [Ensure needed packages are installed] **************************************************************************************************************************************************************************************************
+2018-01-05 11:53:49,043 p=28140 u=adminlocal |  ok: [localhost] => (item=[u'libselinux-python']) => {"changed": false, "changes": {"installed": [], "updated": []}, "item": ["libselinux-python"], "msg": "", "rc": 0, "results": ["All packages providing libselinux-python are up to date"]}
+2018-01-05 11:53:49,055 p=28140 u=adminlocal |  TASK [install-minishift : ensure pre-requisite packages are installed] ***********************************************************************************************************************************************************************
+2018-01-05 11:53:49,677 p=28140 u=adminlocal |  ok: [localhost] => (item=[u'qemu-kvm', u'libvirt']) => {"changed": false, "item": ["qemu-kvm", "libvirt"], "msg": "", "rc": 0, "results": ["10:qemu-kvm-1.5.3-141.el7_4.6.x86_64 providing qemu-kvm is already installed", "libvirt-3.2.0-14.el7_4.7.x86_64 providing libvirt is already installed"]}
+2018-01-05 11:53:49,687 p=28140 u=adminlocal |  TASK [install-minishift : ensure kvm driver is downloaded and installed] *********************************************************************************************************************************************************************
+2018-01-05 11:53:50,282 p=28140 u=adminlocal |  ok: [localhost] => (item=https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm) => {"changed": false, "dest": "/usr/local/bin/docker-machine-driver-kvm", "gid": 0, "group": "root", "item": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm", "mode": "0755", "msg": "file already exists", "owner": "root", "secontext": "unconfined_u:object_r:bin_t:s0", "size": 12096944, "state": "file", "uid": 0, "url": "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"}
+2018-01-05 11:53:50,292 p=28140 u=adminlocal |  TASK [install-minishift : install pre-requisite packages to unarchive compresed files] *******************************************************************************************************************************************************
+2018-01-05 11:53:50,899 p=28140 u=adminlocal |  ok: [localhost] => (item=[u'tar', u'unzip']) => {"changed": false, "item": ["tar", "unzip"], "msg": "", "rc": 0, "results": ["2:tar-1.26-32.el7.x86_64 providing tar is already installed", "unzip-6.0-16.el7.x86_64 providing unzip is already installed"]}
+2018-01-05 11:53:50,909 p=28140 u=adminlocal |  TASK [install-minishift : copy minishift tarball] ********************************************************************************************************************************************************************************************
+2018-01-05 11:53:51,677 p=28140 u=adminlocal |  changed: [localhost] => {"changed": true}
+2018-01-05 11:53:51,687 p=28140 u=adminlocal |  TASK [install-minishift : ensure minishift tarball is unarchived] ****************************************************************************************************************************************************************************
+2018-01-05 11:53:52,753 p=28140 u=adminlocal |  failed: [localhost] (item=minishift-1.11.0-linux-amd64.tgz) => {"changed": false, "item": "minishift-1.11.0-linux-amd64.tgz", "msg": "Source '/tmp/minishift-1.11.0-linux-amd64.tgz' does not exist"}
+2018-01-05 11:53:52,755 p=28140 u=adminlocal |  	to retry, use: --limit @/usbexterno/ansible-playbooks/ahidalgo/centos-7-minishift-install/minishift.retry
+
+2018-01-05 11:53:52,755 p=28140 u=adminlocal |  PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2018-01-05 11:53:52,755 p=28140 u=adminlocal |  localhost                  : ok=6    changed=1    unreachable=0    failed=1   
