@@ -1,9 +1,9 @@
 ---
 - name: this playbook installs minishift in a EL/7 host
   hosts: localhost
-  become: True
   pre_tasks:
     - name: Ensure needed packages are installed
+      become: True
       yum: name={{ item }} state='latest' update_cache='yes'
       with_items:
         - libselinux-python

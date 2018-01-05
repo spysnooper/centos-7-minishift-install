@@ -1,36 +1,39 @@
 ---
 # tasks file for install-minishift
 
-- name: "copy minishift tarball"
-  copy: >
-    src="{{ minishift_installer_package }}"
-    dest="/tmp"
-    owner="root"
-    group="root"
-    mode="755"
+- name: ensure kvm driver is downloaded and installed
+  become: True
+  shell: "wget {{ driver_kvm_binary_url }} "
+  args:
+    chdir: /usr/local/bin/
+    creates: /usr/local/bin/{{ driver_kvm_binary_url | basename}}
 
-- name: download some_service_def init.d script
-  get_url: >
-    url="{{ minishift_installer_package_url }}"
-    dest="/tmp"
+- name: ensure perms in kvm driver
+  become: True
+  file: >
+    path="/usr/local/bin/{{ driver_kvm_binary_url | basename}}"
     owner="root"
-    group="root"
-    mode="755"
-    
+    group="libvirt"
+    mode="0755"
+
+- name: "ensure minishift tarball is downloaded"
+  become: True
+  shell: "wget {{ minishift_installer_package_url }}"
+  args:
+    chdir: /tmp
+    creates: /tmp/{{ minishift_installer_package_url | basename}}
+
 - name: "ensure minishift tarball is unarchived"
+  become: True
   unarchive: >
-    src="/tmp/{{ item }}"
+    src="/tmp/{{ minishift_installer_package_url | basename }}"
     dest="/tmp"
-    remote_src="yes"
-  with_items:
-    - "{{ minishift_installer_package }}"
-
+    
 - name: "ensure minishift binary is installed"
+  become: True
   copy: >
-    src="/tmp/{{ item }}"
-    dest="/usr/local/bin/{{ item | basename }}"
+    src="/tmp/minishift-1.11.0-linux-amd64/minishift"
+    dest="/usr/local/bin/minishift"
     owner="root"
-    group="root"
+    group="libvirt"
     mode="755"
-  with_items: 
-    - "{{ minishift_binary }}"

@@ -1,27 +1,19 @@
 ---
 # tasks file for install-minishift
 - name: ensure pre-requisite packages are installed
+  become: True
   yum: >
     name="{{item}}"
     state="present"
   with_items: "{{ prerequisite_packages }}"
 
-# install kvm driver 
-- name: ensure kvm driver is downloaded and installed
-  get_url: >
-    url="{{ item }}"
-    dest="/usr/local/bin/{{item | basename}}"
-    owner="root"
-    group="root"
-    mode="0755"
-  with_items:
-    - "{{ driver_kvm_binary_url }}"
-
-
 - name: install pre-requisite packages to unarchive compresed files
+  become: True
   yum: >
     name="{{item}}"
     state="present"
   with_items:
     - tar
     - unzip
+    
+

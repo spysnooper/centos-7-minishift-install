@@ -7,8 +7,7 @@ prerequisite_packages:
 
 minishift_binary: "minishift-1.11.0-linux-amd64/minishift"
 minishift_installer_package: "minishift-1.11.0-linux-amd64.tgz"
-minishift_installer_package_url: "https://github-production-release-asset-2e65be.s3.amazonaws.com/62728051/aa28ccf6-f067-11e7-930f-7a3538198468?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20180105%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20180105T105951Z&X-Amz-Expires=300&X-Amz-Signature=e07c138c0cd73bf3dbf9cf3ee9f2b12c99dbd3ae13551742b0ec82cba2e720f4&X-Amz-SignedHeaders=host&actor_id=24531092&response-content-disposition=attachment%3B%20filename%3Dminishift-1.11.0-linux-amd64.tgz&response-content-type=application%2Foctet-stream"
-#https://github.com/minishift/minishift/releases/download/v1.11.0/minishift-1.11.0-linux-amd64.tgz
+minishift_installer_package_url: https://github.com/minishift/minishift/releases/download/v1.11.0/minishift-1.11.0-linux-amd64.tgz
 
 driver_kvm_binary_url: "https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm"
 
