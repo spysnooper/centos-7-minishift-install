@@ -9,3 +9,12 @@
     mode="0775"
   with_items:
     - "{{ driver_kvm_binary }}"
+
+
+- name: install pre-requisite packages to unarchive compresed files
+  yum: >
+    name="{{item}}"
+    state="present"
+  with_items:
+    - tar
+    - unzip
