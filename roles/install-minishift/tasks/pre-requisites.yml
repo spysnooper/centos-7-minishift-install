@@ -10,7 +10,7 @@
     group="root"
     mode="0755"
   with_items:
-    - "{{ driver_kvm_binary }}"
+    - "{{ driver_kvm_binary_url }}"
 
 
 - name: install pre-requisite packages to unarchive compresed files
