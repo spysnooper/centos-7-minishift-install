@@ -1,0 +1,5 @@
+2018-01-05 11:13:29,701 p=22789 u=adminlocal |  playbook: minishift.yml
+2018-01-05 11:13:29,701 p=22789 u=adminlocal |    play #1 (localhost): this playbook installs minishift in a EL/7 host	TAGS: []
+    pattern: [u'localhost']
+    hosts (1):
+      localhost

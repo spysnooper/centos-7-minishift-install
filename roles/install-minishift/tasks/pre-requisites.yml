@@ -1,5 +1,10 @@
 ---
 # tasks file for install-minishift
+- name: ensure pre-requisite packages are installed
+  yum: >
+    name="{{item}}"
+    state="present"
+  with_items: "{{ prerequisite_packages }}"
 
 # install kvm driver 
 - name: ensure kvm driver is downloaded and installed
