@@ -1,0 +1,11 @@
+---
+# tasks file for install-minishift
+
+# install kvm driver 
+- name: ensure kvm driver is downloaded and installed
+  get_url: >
+    url="{{ item }}"
+    dest="/usr/local/bin/{{item | basename}}"
+    mode="0775"
+  with_items:
+    - "{{ driver_kvm_binary }}"

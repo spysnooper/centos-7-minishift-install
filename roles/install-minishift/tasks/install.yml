@@ -1,0 +1,10 @@
+---
+# tasks file for install-minishift
+
+- name: "Download and Unarchive minishift"
+  unarchive: >
+    src="{{ item }}"
+    dest="/usr/local/bin"
+    remote_src="yes"
+  with_items:
+    - "{{ minishift_installer_package }}"

@@ -1,3 +1,6 @@
 ---
 # tasks file for install-minishift
 
+- import_tasks: pre-requisites.yml
+
+- import_tasks: install.yml
